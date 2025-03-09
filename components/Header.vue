@@ -15,7 +15,8 @@
 header {
   background-color: var(--primary-color);
   color: white;
-  padding: 20px 0;
+  padding: 0;
+  width: 100%;
 }
 
 h1 {
@@ -23,7 +24,8 @@ h1 {
 }
 
 nav {
-  margin-top: 10px;
+  margin-top: 20px;
+  width: 100%
 }
 
 nav a {
