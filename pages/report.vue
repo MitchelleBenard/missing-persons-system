@@ -1,6 +1,7 @@
 <template>
+  <Header />  
   <div class="report-container">
-    <Header />
+
     <div class="form-wrapper">
       <h1>Report a Missing Person</h1>
       <form @submit.prevent="submitReport">
@@ -60,8 +61,9 @@
         <button type="submit" class="submit-btn">Submit Report</button>
       </form>
     </div>
-    <Footer />
+
   </div>
+  <Footer />  
 </template>
 
 <script setup>

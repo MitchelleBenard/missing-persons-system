@@ -1,7 +1,6 @@
 <template>
+  <Header />  
   <div class="search-container">
-    <Header />
-
     <div class="search-box">
       <h1>Search for a Missing Person</h1>
       <p>Enter details below to find a missing person in our database.</p>
@@ -23,9 +22,8 @@
 
       <button class="btn search-btn" @click="submitSearch">🔍 Search</button>
     </div>
-
-    <Footer />
   </div>
+  <Footer />  
 </template>
 
 <script setup>
@@ -47,7 +45,6 @@ const submitSearch = () => {
   align-items: center;
   text-align: center;
   padding: 40px 20px;
-  background: linear-gradient(to right, #004e92, #000428);
   color: #fff;
   min-height: 100vh;
   font-family: 'Arial', sans-serif;

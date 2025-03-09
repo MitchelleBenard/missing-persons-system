@@ -1,6 +1,7 @@
 <template>
+  <Header />  
   <div class="home-container">
-    <Header />
+
 
     <div class="hero">
       <div class="hero-text">
@@ -17,7 +18,7 @@
       </div>
 
       <!-- Added Image -->
-      <img src="@/assets/missing-person.png" alt="Missing Person" class="hero-image">
+      <img src="@/assets/images/missing-person.png" alt="Missing Person" class="hero-image">
     </div>
 
     <div class="info-section">
@@ -83,30 +84,36 @@ onMounted(fetchData);
   flex-direction: column;
   align-items: center;
   text-align: center;
-  padding: 40px 20px;
-  background: linear-gradient(to right, #004e92, #000428);
-  color: #fff;
-  min-height: 100vh;
-  font-family: 'Arial', sans-serif;
+  padding: 0;
+  /* background: linear-gradient(to right, #004e92, #000428); */
+  /* color: #fff; */
+  /* min-height: 100vh; */
+  
 }
 
 .hero {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 40px;
-  gap: 40px;
+  /* width: 100%; */
+  justify-content: space-between;
   padding: 20px;
+  height: 100vh;
+  /* background-color: #000428; */
+
 }
 
 .hero-text {
-  max-width: 600px;
+  width: 50%;
+  padding: 20px;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .hero-image {
-  width: 300px;
+  padding: 20px; 
+  width: 50%;
   height: auto;
   border-radius: 12px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
