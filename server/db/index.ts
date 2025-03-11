@@ -1,4 +1,4 @@
-import mongoose from 'mongoose'
+import mongoose from 'mongoose' //npm install mongoose
 
 // Export connectDB as a named export
 export const connectDB = async () => {
