@@ -18,7 +18,7 @@
       </div>
 
       <!-- Added Image -->
-      <img src="@/assets/images/missing-person.png" alt="Missing Person" class="hero-image">
+      <img src="@/assets/images/mperson.jpg" alt="Missing Person" class="hero-image">
     </div>
 
     <div class="info-section">
@@ -67,11 +67,12 @@ const tiktokShare = computed(() => `https://www.tiktok.com/share?url=${encodeURI
 
 const fetchData = async () => {
   try {
-    const response = await fetch('http://127.0.0.1:8000/api/welcome/');
+    const response = await fetch('/api/welcome');
     const data = await response.json();
     apiMessage.value = data.message;
   } catch (error) {
     console.error('Error fetching data:', error);
+    apiMessage.value = 'Failed to load welcome message';
   }
 };
 

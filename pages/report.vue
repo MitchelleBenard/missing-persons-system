@@ -88,8 +88,46 @@ const handleFileUpload = (event) => {
   form.value.photo = event.target.files[0];
 };
 
-const submitReport = () => {
-  console.log('Report Submitted:', form.value);
+const submitReport = async () => {
+  try {
+    // Create a new object without the File object
+    const reportData = {
+      ...form.value,
+      photo: form.value.photo ? form.value.photo.name : null
+    };
+
+    const response = await fetch('/api/reports', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(reportData)
+    });
+
+    const result = await response.json();
+    
+    if (result.success) {
+      alert('Report submitted successfully!');
+      // Reset form
+      form.value = {
+        firstName: '',
+        middleName: '',
+        lastName: '',
+        lastSeen: '',
+        phone: '',
+        photo: null,
+        emergencyOption: '',
+        emergencyContact: '',
+        idNumber: '',
+        additionalDetails: ''
+      };
+    } else {
+      throw new Error(result.error);
+    }
+  } catch (error) {
+    console.error('Error submitting report:', error);
+    alert('Failed to submit report');
+  }
 };
 </script>
 
